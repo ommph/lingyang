@@ -1,0 +1,71 @@
+<!DOCTPYE html>
+<html>
+    <head>        
+        <meta charset="utf-8">
+        <meta name="Description" content="申请代理商" />
+        <title>申请代理商</title>       
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="App-Config" content="fullscreen=yes,userHistoryState,transition=yes"> 
+        <meta content="telephone=no" name="format-detection">
+        <link rel="stylesheet" type="text/css" href="css/lingyang.css" />
+        <script type="text/javascript" src="js/flexible.js"></script>
+        <script type="text/javascript" src="js/flexible_css.js"></script>   
+       
+    </head>
+    <body>
+        <div class="wrap f_activatebj">
+           
+            <div class="f_applyagentbj">
+                <span>申请成为羚羊通信代理商<br /><b class="z_weilai">未来</b></span>
+            </div>                
+           
+
+            <div class="f_activatenumber f_applyagent">
+                <span class="z_activate_mynum z_fullmessage">请完善以下信息</span>
+            </div>
+
+            <div class="f_applyagentinput">              
+                <p class="z_telinput">
+                      <input type="text" placeholder="*公司名称" value="">
+                </p>
+                <p class="z_telinput z_username">
+                      <input type="text" placeholder="*联系人名称" value="">
+                </p>
+                <p class="z_telinput z_username">
+                      <input type="tel" placeholder="*请输入联系手机号码" value="">
+                </p>
+                <p class="f_code">
+                      <input type="tel" placeholder="*请输入验证码" value="" name="" id="" class="z_insertcode">
+                      <input type="submit" value="获取验证码" name="" id="getcode" class="z_getcode">
+                </p>
+                <p class="f_bindtel">确认</p>
+                <p class="f_bindprotocl">
+                    <span>点击“确认”按钮即表示您同意</span><a href="">“用户协议”</a>
+                </p>                              
+            </div>
+        </div>
+
+    <script type="text/javascript">  
+        var wait=60;  
+        function time(o) {  
+                if (wait == 0) {  
+                    o.removeAttribute("disabled");            
+                    o.value="获取验证码";  
+                    o.style.background = "#1db3fa";
+                    wait = 60;  
+                } else {  
+                    o.setAttribute("disabled", true);  
+                    o.value="" + wait + "s后重新获取"; 
+                    o.style.background = "#a2a2a2";
+                    wait--;  
+                    setTimeout(function() {  
+                        time(o)  
+                    },  
+                    1000)  
+                }  
+            }  
+        document.getElementById("getcode").onclick=function(){time(this);}
+    </script>
+    </body>     
+</html>

@@ -1,0 +1,119 @@
+<!DOCTPYE html>
+<html>
+    <head>        
+        <meta charset="utf-8">
+        <meta name="Description" content="绑定手机号" />
+        <title>绑定手机号</title>       
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="App-Config" content="fullscreen=yes,userHistoryState,transition=yes"> 
+        <meta content="telephone=no" name="format-detection">
+        <link rel="stylesheet" type="text/css" href="css/lingyang.css" />
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/flexible.js"></script>
+        <script type="text/javascript" src="js/flexible_css.js"></script>   
+       
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="f_peoplewrap">
+               <p class="f_bingtelimg">
+                   <img src="images/bingdtel_03.png">
+               </p>
+               <p class="f_peoplename f_bingdtel">绑定手机号</p> 
+               <p class="f_peopletel f_bindtelnum">
+                    134-6678-7751
+               </p>
+               <p class="f_peopleedit">
+                 <a href="javascript:void(0);">更改手机号</a>
+                </p>
+            </div>
+
+
+            <!--更改手机号弹窗-->
+            <div class="f_edittelphone">
+                <div class="tb_overflay"></div>                
+                <div class="f_switchcontent">
+                  <p class="z_movecarclose">
+                    <img src="images/close.png">
+                  </p>
+                  <p class="z_edittel_title">输入新手机号</p>   
+                  <p class="f_edittel_inserttel">
+                    <img src="images/telicon_03.png">
+                    <input type="tel" id="" name="" placeholder="请输入手机号码">
+                  </p> 
+                  <p class="f_edittel_inserttel">
+                    <img src="images/telicon_07.png">
+                    <input type="tel" id="" name="" placeholder="请输入验证码">
+                   <!--  <span class="z_edittel_getcode" id="getcode">获取验证码</span> -->
+                    <input type="submit" value="获取验证码" name="" id="getcode" class="z_edittel_getcode">
+                  </p>  
+                  <p class="f_successend">
+                    <a href="javascript:void(0)">确认</a>
+                  </p>           
+            </div>           
+        </div>
+
+       
+      <!--点击确认弹窗成功界面-->
+        <div class="f_telsuccess">
+                <div class="tb_overflay"></div>                
+                <div class="f_switchcontent z_telsuccess">
+                    <p class="z_movecarclose">
+                      <img src="images/close.png">
+                    </p>
+                    <p>成功</p>
+                    <p class="z_telsucimg">
+                      <img src="images/success.png">
+                    </p>
+                    <p class="z_teltext">手机号已修改为：13621053877</p>
+                </div>      
+            </div>
+        </div>
+
+          
+
+ <script type="text/javascript">  
+        var wait=60;  
+        function time(o) {  
+                if (wait == 0) {  
+                    o.removeAttribute("disabled");            
+                    o.value="获取验证码";  
+                    o.style.background = "transparent";
+                    wait = 60;  
+                } else {  
+                    o.setAttribute("disabled", true);  
+                    o.value="" + wait + "s后重新获取"; 
+                    o.style.background = "transparent";
+                    o.style.color = "#666";
+                    wait--;  
+                    setTimeout(function() {  
+                        time(o)  
+                    },  
+                    1000)  
+                }  
+            }  
+        document.getElementById("getcode").onclick=function(){time(this);}
+
+        $(function(){
+          $(".f_peopleedit").click(function(){
+            $(".f_edittelphone").show();
+          }) 
+          $(".z_movecarclose").click(function(){
+            $(".f_edittelphone").hide();
+            $(".f_telsuccess").hide();
+          })
+          $(".tb_overflay").click(function(){
+            $(".f_edittelphone").hide();
+            $(".f_telsuccess").hide();
+          })
+
+          $(".f_successend").click(function(){
+            $(".f_telsuccess").show();
+            $(".f_edittelphone").hide();
+          })
+        })
+    </script>
+
+    </body>     
+</html>

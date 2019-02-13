@@ -1,0 +1,62 @@
+<!DOCTPYE html>
+<html>
+    <head>        
+        <meta charset="utf-8">
+        <meta name="Description" content="代理商登录" />
+        <title>代理商登录</title>       
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="App-Config" content="fullscreen=yes,userHistoryState,transition=yes"> 
+        <meta content="telephone=no" name="format-detection">
+        <link rel="stylesheet" type="text/css" href="css/lingyang.css" />
+        <script type="text/javascript" src="js/flexible.js"></script>
+        <script type="text/javascript" src="js/flexible_css.js"></script>   
+       
+    </head>
+    <body>
+        <div class="wrap f_activatebj">
+            <div class="f_driverbj">
+                <span class="f_driverlogo">
+                    <img src="images/logo.png">
+                </span>
+                <span class="f_drivertitle f_drivertitle_update">羚羊通信</span>
+            </div>
+            <div class="f_driverinput">
+                <p class="z_telinput z_username z_username_update">
+                          <input type="tel" placeholder="*请输入联系手机号码" value="">
+                </p>
+                <p class="f_code">
+                          <input type="tel" placeholder="*请输入验证码" value="" name="" id="" class="z_insertcode">
+                          <input type="submit" value="获取验证码" name="" id="getcode" class="z_getcode">
+                </p>
+                <p class="f_bindtel f_driverconfim">登录</p>
+                <p class="f_sqagent">
+                    <a href="">申请成为代理商</a>
+                </p>
+            </div>
+            
+        </div>
+
+    <script type="text/javascript">  
+        var wait=60;  
+        function time(o) {  
+                if (wait == 0) {  
+                    o.removeAttribute("disabled");            
+                    o.value="获取验证码";  
+                    o.style.background = "#1db3fa";
+                    wait = 60;  
+                } else {  
+                    o.setAttribute("disabled", true);  
+                    o.value="" + wait + "s后重新获取"; 
+                    o.style.background = "#a2a2a2";
+                    wait--;  
+                    setTimeout(function() {  
+                        time(o)  
+                    },  
+                    1000)  
+                }  
+            }  
+        document.getElementById("getcode").onclick=function(){time(this);}
+    </script>
+    </body>     
+</html>
